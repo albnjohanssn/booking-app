@@ -1,5 +1,4 @@
 'use client';
-import { authClient } from '../../lib/auth-client'; //import the auth client
 import { useState } from 'react';
 
 export default function SignUp() {
@@ -8,26 +7,6 @@ export default function SignUp() {
   const [name, setName] = useState("");
 
   const signUp = async () => {
-    const { data, error } = await authClient.signUp.email(
-      {
-        email,
-        password,
-        name,
-      },
-      {
-        onRequest: (ctx) => {
-          //show loading
-          console.log('loading');
-        },
-        onSuccess: (ctx) => {
-          //redirect to the dashboard
-          console.log('successfully registered account');
-        },
-        onError: (ctx) => {
-          alert(ctx.error.message);
-        },
-      }
-    );
   };
 
   return (

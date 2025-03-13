@@ -32,6 +32,7 @@ export default async function page() {
                 resourceId: resource
             }
         })
+        console.log('Created booking:', data);
     }
 
     return (
